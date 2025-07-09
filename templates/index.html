@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Face Recognition App{% endblock %}
+
+{% block bodyblock %}
+<style>
+    .hero-section {
+        background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+        color: white;
+        border-radius: 0 0 30px 30px;
+        overflow: hidden;
+        position: relative;
+        padding: 8rem 0 6rem;
+        margin-bottom: 4rem;
+        box-shadow: 0 10px 30px rgba(67, 97, 238, 0.2);
+    }
+    
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h30v30H0V0zm30 30h30v30H30V30z' fill='rgba(255,255,255,0.05)' fill-rule='evenodd'/%3E%3C/svg%3E");
+        opacity: 0.3;
+    }
+    
+    .hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+    
+    .hero-title {
+        text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-highlight {
+        background: linear-gradient(120deg, #4cc9f0 0%, #4361ee 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+        padding: 0 5px;
+    }
+    
+    .hero-content {
+        max-width: 600px;
+    }
+    
+    .btn-gradient {
+        background: linear-gradient(to right, #4cc9f0, #4361ee);
+        border: none;
+        color: white;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+        border-radius: 50px;
+        padding: 0.8rem 2rem;
+    }
+    
+    .btn-gradient:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(67, 97, 238, 0.4);
+        color: white;
+    }
+    
+    .btn-outline-light {
+        transition: all 0.3s ease;
+        border-radius: 50px;
+        padding: 0.8rem 2rem;
+        border-width: 2px;
+    }
+    
+    .btn-outline-light:hover {
+        background: rgba(255,255,255,0.1);
+    }
+    
+    .hero-image-container {
+        position: relative;
+        padding: 2rem;
+    }
+    
+    .floating {
+        animation: floating 6s ease-in-out infinite;
+        filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+        max-width: 100%;
+        height: auto;
+    }
+    
+    @keyframes floating {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+    }
+    
+    /* Features Section */
+    .features-section {
+        padding: 5rem 0;
+    }
+    
+    .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: #4361ee;
+        background: rgba(67, 97, 238, 0.1);
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin: 0 auto;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+        padding: 5rem 0;
+        margin: 4rem 0 0;
+        background: linear-gradient(135deg, rgba(67, 97, 238, 0.05) 0%, rgba(58, 12, 163, 0.05) 100%);
+        border-radius: 30px;
+    }
+</style>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="hero-content">
+                    <h1 class="display-3 fw-bold hero-title animate__animated animate__fadeInDown">
+                        Advanced <span class="hero-highlight">Face Recognition</span>
+                    </h1>
+                    <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                        Fast. Smart. Secure. Powered by cutting-edge AI technology.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 mt-5 animate__animated animate__fadeInUp animate__delay-2s">
+                        <a href="/app/gender/" class="btn btn-gradient">
+                            <i class="fas fa-robot me-2"></i> Try Demo
+                        </a>
+                        <a href="/about/" class="btn btn-outline-light">
+                            <i class="fas fa-brain me-2"></i> Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-image-container animate__animated animate__fadeInRight">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" 
+                         alt="AI Face Recognition" 
+                         class="img-fluid floating" 
+                         style="max-height: 350px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold mb-3">Key Features</h2>
+            <p class="text-muted lead">Advanced capabilities powered by AI</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="text-center p-4 h-100 animate__animated animate__fadeInUp">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3 class="h4 mb-3">Privacy First</h3>
+                    <p class="text-muted">All processing happens securely with no data storage.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center p-4 h-100 animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="feature-icon">
+                        <i class="fas fa-people-arrows"></i>
+                    </div>
+                    <h3 class="h4 mb-3">Multi-Face Detection</h3>
+                    <p class="text-muted">Identify multiple faces in a single image simultaneously.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center p-4 h-100 animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="feature-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="h4 mb-3">Deep Learning</h3>
+                    <p class="text-muted">Powered by neural networks for superior accuracy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container text-center">
+        <h2 class="display-5 fw-bold mb-4">Ready to experience AI-powered face recognition?</h2>
+        <a href="/app/gender/" class="btn btn-gradient btn-lg px-5 py-3">
+            <i class="fas fa-eye me-2"></i> See It In Action
+        </a>
+    </div>
+</section>
+
+<!-- Animation CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+{% endblock %}

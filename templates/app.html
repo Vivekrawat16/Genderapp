@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+
+{% block title %}About App | Face Recognition{% endblock %}
+
+{% block bodyblock %}
+<style>
+    :root {
+        --gradient-primary: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+        --gradient-secondary: linear-gradient(135deg, #4cc9f0 0%, #4361ee 100%);
+        --text-dark: #1a1a2e;
+        --text-light: #f8f9fa;
+    }
+    
+    .hero-section {
+        background: var(--gradient-primary);
+        color: var(--text-light);
+        border-radius: 0 0 20px 20px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h30v30H0V0zm30 30h30v30H30V30z' fill='rgba(255,255,255,0.05)' fill-rule='evenodd'/%3E%3C/svg%3E");
+        opacity: 0.3;
+    }
+    
+    .feature-card {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        border: none;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+    
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: var(--gradient-secondary);
+        color: white;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .btn-gradient {
+        background: var(--gradient-secondary);
+        border: none;
+        color: white;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-gradient:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
+        color: white;
+    }
+    
+    .floating-img {
+        animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+    }
+</style>
+
+<div class="hero-section py-5 mb-5">
+    <div class="container py-4 position-relative">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <h1 class="display-4 fw-bold mb-4 animate__animated animate__fadeInDown">Advanced Face Recognition</h1>
+                <p class="lead mb-4">Our AI analyzes facial features with precision to determine gender, all while respecting your privacy.</p>
+                <a href="/app/gender/" class="btn btn-gradient btn-lg px-4 py-3 animate__animated animate__fadeInUp animate__delay-1s">
+                    <i class="fas fa-play-circle me-2"></i> Try Live Demo
+                </a>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/3468/3468370.png" alt="AI Face Recognition" class="img-fluid floating-img" style="max-height: 300px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="feature-card p-4 h-100">
+                <div class="feature-icon mx-auto">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 class="h4 text-center mb-3">Multi-Face Detection</h3>
+                <p class="text-muted text-center">Accurately analyzes multiple faces in a single image with advanced computer vision algorithms.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card p-4 h-100">
+                <div class="feature-icon mx-auto">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3 class="h4 text-center mb-3">Real-Time Processing</h3>
+                <p class="text-muted text-center">Get instant results with our optimized deep learning models running on powerful servers.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card p-4 h-100">
+                <div class="feature-icon mx-auto">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h3 class="h4 text-center mb-3">Privacy Focused</h3>
+                <p class="text-muted text-center">Your images are processed securely and never stored permanently on our servers.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5 my-5">
+    <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+            <h2 class="fw-bold mb-4">How It Works</h2>
+            <div class="d-flex mb-4">
+                <div class="me-4">
+                    <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                        <span class="fw-bold">1</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="h5">Upload Your Image</h4>
+                    <p class="text-muted mb-0">Select or drag-and-drop an image containing faces you want to analyze.</p>
+                </div>
+            </div>
+            <div class="d-flex mb-4">
+                <div class="me-4">
+                    <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                        <span class="fw-bold">2</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="h5">AI Processing</h4>
+                    <p class="text-muted mb-0">Our neural networks detect faces and analyze gender characteristics.</p>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="me-4">
+                    <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                        <span class="fw-bold">3</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="h5">Get Results</h4>
+                    <p class="text-muted mb-0">View the analysis with visual indicators for each detected face.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="border-radius-lg overflow-hidden shadow-lg">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Process demonstration" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Animation CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+{% endblock %}
