@@ -1,10 +1,6 @@
 [phases.setup]
 nixPkgs = [
   "libGL",
-  "libGLU",
-  "mesa",
-  "xorg.libX11",
-  "xorg.libXext",
-  "xorg.libxcb",
-  "xorg.libXfixes"
+  "glib",
+  "ffmpeg"
 ]
