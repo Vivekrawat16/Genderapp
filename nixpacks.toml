@@ -1,8 +1,10 @@
 [phases.setup]
 nixPkgs = [
-  "python312",
   "libGL",
   "libGLU",
   "mesa",
-  "glib"
+  "xorg.libX11",
+  "xorg.libXext",
+  "xorg.libxcb",
+  "xorg.libXfixes"
 ]
