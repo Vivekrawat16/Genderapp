@@ -1,12 +1,2 @@
-[phases.setup]
-nixPkgs = [
-  "python312",
-  "libGL",
-  "libGLU",
-  "mesa",
-  "xorg.libX11",
-  "xorg.libXext",
-  "xorg.libxcb",
-  "xorg.libXfixes",
-  "glew"
-]
+[build]
+builder = "docker"
