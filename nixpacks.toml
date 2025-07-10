@@ -2,6 +2,11 @@
 nixPkgs = [
   "python312",
   "libGL",
-  "glib",
-  "ffmpeg"
+  "libGLU",
+  "mesa",
+  "xorg.libX11",
+  "xorg.libXext",
+  "xorg.libxcb",
+  "xorg.libXfixes",
+  "glew"
 ]
